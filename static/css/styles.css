@@ -1,0 +1,1361 @@
+/* styles.css - CPE JSON Generator styles */
+
+/* Row selection styling */
+.table-active {
+    background-color: rgba(0, 123, 255, 0.35) !important;
+    font-weight: bold;
+    border-left: 3px solid #007bff;
+}
+
+/* JSON container transitions */
+.json-container {
+    transition: all 0.3s ease-in-out;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Button transitions */
+.btn-success {
+    transition: background-color 0.3s ease;
+}
+
+/* Fix for the table row selection styling */
+.table-active,
+.table-active > td,
+.table-active > th {
+    background-color: rgba(0, 123, 255, 0.35) !important;  /* Clearly visible blue */
+}
+
+.table-hover tbody tr:hover:not(.table-active) {
+    background-color: rgba(0, 0, 0, 0.075) !important;  /* Light gray for hover */
+}
+
+/* Ensure selected trumps hover */
+.table-hover tbody tr.table-active:hover {
+    background-color: rgba(0, 123, 255, 0.45) !important;  /* Slightly darker blue when hovering selected row */
+}
+
+/* Confirmed mapping row styling */
+.confirmed-mapping-row {
+    background-color: rgba(40, 167, 69, 0.1) !important;
+    border-left: 3px solid #28a745;
+}
+
+.confirmed-mapping-row:hover {
+    background-color: rgba(40, 167, 69, 0.2) !important;
+}
+
+.confirmed-mapping-row.table-active {
+    background-color: rgba(40, 167, 69, 0.3) !important;
+    border-left: 3px solid #1e7e34;
+}
+
+/* Add pointer cursor to rows that can be selected */
+.cpe-row {
+    cursor: pointer;
+}
+
+/* Pre-formatted code styling */
+pre {
+    max-height: 400px;
+    overflow-y: auto;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Tab navigation styling */
+.bg-pivot {
+    --bs-bg-opacity: 1;
+    background-color: rgb(181, 90, 232) !important;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Tab content classes */
+.tabcontent {
+    display: block;  /* Changed from "display: none" */
+}
+
+.tabcontent.d-none {
+    display: none !important;
+}
+
+.tabcontent {
+    display: none;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+/* Table styling */
+table.dataframe {
+    table-layout: fixed;
+    width: 100%;
+}
+
+table.dataframe td:first-child {
+    width: 20%;
+}
+
+table.dataframe td:last-child {
+    width: 80%;
+}
+
+/* Linux Kernel special handling badge */
+.linux-kernel-badge {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 8px;
+    padding: 3px 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 4px;
+    color: #212529;
+    background-color: #ffc107;
+    cursor: help;
+}
+
+.linux-kernel-badge:hover {
+    background-color: #e0a800;
+}
+
+/* Git versionType badge styling */
+.git-versiontype-badge {
+    display: inline-block;
+    padding: 0.25em 0.6em;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.75em;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    background-color: #ffc107; /* warning color */
+    color: #212529; /* dark text */
+    cursor: help;
+    transition: all 0.2s ease-in-out;
+}
+
+.git-versiontype-badge:hover {
+    background-color: #e0a800; /* darker warning color on hover */
+    transform: scale(1.05);
+}
+
+/* Custom purple badge type for source data concerns */
+.badge.bg-sourceDataConcern {
+    background-color: #6f42c1 !important; /* Bootstrap purple color */
+    color: #fff;
+    display: inline-block;
+    padding: 0.35em 0.8em; /* Match modal badge padding */
+    font-size: 0.8rem; /* Match modal badge font size */
+    font-weight: 600; /* Match modal badge font weight */
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 50rem !important; /* Match modal badge rounded-pill shape */
+    transition: all 0.2s ease;
+    cursor: pointer; /* Match modal badge cursor */
+}
+
+/* Hover effect */
+.badge.bg-sourceDataConcern:hover {
+    background-color: #5d3499 !important; /* Slightly darker Bootstrap purple on hover */
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(111, 66, 193, 0.3);
+}
+
+/* Focus state for accessibility */
+.badge.bg-sourceDataConcern:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+}
+
+/* Provenance Assistance Styles */
+.provenance-content {
+    font-size: 0.9rem;
+}
+
+/* Description content area */
+.description-content {
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+}
+
+.placeholder-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.description-text {
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+/* Container styling for both types of cards */
+.provenance-links, 
+.description-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: stretch;
+}
+
+/* Card styling - unified for all provenance cards */
+.source-card {
+    min-width: 180px;
+    max-width: 300px;
+    background-color: #f8f9fa;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    height: auto;
+    margin-right: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card header styling */
+.source-card .card-header {
+    background-color: #e9ecef;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
+    height: 38px;
+    display: flex;
+    align-items: center;
+}
+
+/* Card body styling */
+.source-card .card-body {
+    padding: 0.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Button styling - unified for all buttons */
+.language-button,
+.provenance-button {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    transition: background-color 0.2s, color 0.2s;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.5rem;
+    min-height: 30px;
+    height: auto;
+}
+
+/* Remove margin from last button */
+.language-button:last-child,
+.provenance-button:last-child {
+    margin-bottom: 0;
+}
+
+/* Hover state for buttons */
+.language-button:hover,
+.provenance-button:hover {
+    background-color: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+}
+
+/* Active state for language buttons */
+.language-button.active {
+    background-color: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+}
+
+/* Specific layout for center-aligned buttons (single button cards) */
+.card-body.d-flex.align-items-center.justify-content-center {
+    justify-content: center;
+}
+
+.card-body.d-flex.align-items-center.justify-content-center .language-button,
+.card-body.d-flex.align-items-center.justify-content-center .provenance-button {
+    margin-bottom: 0;
+}
+
+/* For cards with multiple buttons */
+.card-body.has-multiple-buttons {
+    justify-content: space-between;
+    padding: 0.5rem;
+    gap: 0.5rem;
+}
+
+/* Make specific adjustments for reference tag cards to match description cards */
+#provenanceLinks_* .source-card,
+#descriptionButtons_* .source-card {
+    height: 100%;
+    width: auto;
+}
+
+/* Link button styles */
+.btn-link {
+    text-decoration: none;
+    color: #0d6efd;
+    padding: 0;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+    color: #0a58ca;
+}
+
+/* Transitions for row collapse and JSON toggle */
+.row-transition {
+    transition: opacity 0.3s ease, max-height 0.4s ease, transform 0.3s ease !important;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+}
+
+/* Improve consolidated-json-container transitions */
+.consolidated-json-container {
+  overflow: hidden;
+  max-height: 2000px; /* Large enough for most content */
+  opacity: 1;
+  transition: max-height 0.4s ease-out, opacity 0.3s ease-out;
+  display: block;
+}
+
+.consolidated-json-container.collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* Button transitions */
+.btn-transition {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Add this to your existing .collapsing class or use Bootstrap's */
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
+}
+
+/* Collapsible content styles */
+.collapsible-content {
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.collapsible-content.collapsed {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    display: none;
+}
+
+/* JSON container styles */
+.consolidated-json-container pre {
+    max-height: 400px;
+    overflow-y: auto;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* All configurations display */
+#allConfigurationsContent {
+    max-height: 600px;
+    overflow-y: auto;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Completion tracker styles */
+.completion-tracker-container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+}
+
+/* JSON display container */
+[id^="consolidatedJsonDisplay_"] {
+    transition: max-height 0.3s ease-out;
+}
+
+/* Configuration summary styling */
+#configurationSummary {
+    font-weight: 500;
+}
+
+/* Table container styles */
+.table-container {
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  max-height: 2000px; /* Large enough for most tables */
+  opacity: 1;
+}
+
+/* Collapsed state */
+.table-container.collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  pointer-events: none; /* Prevents interaction when collapsed */
+}
+
+/* Collapsible content styles - moved from inline JS */
+.collapsible-content {
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.collapsible-content.collapsed {
+  max-height: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  display: none;
+}
+
+/* Button transitions - moved from inline JS */
+.btn-transition {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* JSON display containers */
+.json-display-container {
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.json-display-container.collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* Add these to your styles.css file */
+.description-container {
+  overflow: hidden;
+  max-height: 2000px; /* Large enough for most descriptions */
+  opacity: 1;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  margin-bottom: 1rem; /* Add some spacing when visible */
+}
+
+.description-container.collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  margin: 0; /* No margin when collapsed */
+  pointer-events: none;
+  display: block; /* Keep as block to maintain layout */
+}
+
+/* Add these CSS rules for description transitions */
+.description-container {
+  overflow: hidden;
+  max-height: 2000px;
+  opacity: 1;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  margin-bottom: 1rem; /* Add some spacing when visible */
+}
+
+.description-container.collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  margin: 0; /* No margin when collapsed */
+  pointer-events: none;
+  display: block; /* Keep as block to maintain layout */
+}
+
+/* For the description content area in provenance assistance */
+.description-content {
+  overflow: hidden;
+  max-height: 2000px;
+  opacity: 1;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  margin-bottom: 1rem; /* Add some spacing when visible */
+}
+
+.description-content.collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  margin: 0; /* No margin when collapsed */
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* Fix for any parent containers that might add extra spacing */
+.provenance-container .row {
+  margin-bottom: 0;
+}
+
+/* Collapse any description parent containers when all children are collapsed */
+.description-container-wrapper:empty,
+.description-container-wrapper:has(> .description-container.collapsed:only-child) {
+  margin: 0;
+  padding: 0;
+}
+
+/* Make description content completely collapse with no whitespace */
+.description-content.collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 !important; /* Override Bootstrap padding */
+  margin: 0 !important; /* Override Bootstrap margin */
+  border: none !important; /* Remove any borders */
+  overflow: hidden;
+}
+
+/* Hide specific table headers */
+.hidden-header {
+    display: none;
+}
+
+/* Add to existing styles.css */
+
+/* Button styling for copy/export buttons */
+.copy-button {
+    margin-bottom: 8px;
+}
+
+/* Feedback animation */
+.btn-transition {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Button container spacing */
+#allConfigButtonsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Add Font Awesome if not already included in your HTML */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+/* Reference section styling */
+.reference-section {
+    margin: 2px 0;
+}
+
+.reference-section .badge {
+    transition: all 0.2s ease;
+    font-size: 0.8rem;
+}
+
+.reference-section .badge:hover {
+    background-color: #157347 !important;
+    transform: scale(1.05);
+}
+
+/* Ensure second cell has no pointer cursor unless over badges */
+.cpe-row td:nth-child(2) {
+    cursor: default;
+}
+
+.cpe-row td:nth-child(2) .badge {
+    cursor: pointer;
+}
+
+/* Modal Badge Styling - Consolidated styling for all modal-integrated badges */
+.modal-badge {
+    border-radius: 50rem !important; /* rounded-pill shape like confirmed mapping */
+    transition: all 0.2s ease;
+    font-size: 0.8rem;
+    padding: 0.35em 0.8em;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.modal-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Confirmed Mapping Badge - Success green with checkmark */
+.modal-badge.bg-success {
+    background-color: #198754 !important;
+    color: white;
+}
+
+.modal-badge.bg-success:hover {
+    background-color: #157347 !important;
+}
+
+/* Provenance Badge - Blue theme for valuable information */
+.modal-badge.bg-info {
+    background-color: #0d6efd !important;
+    color: white;
+}
+
+.modal-badge.bg-info:hover {
+    background-color: #0b5ed7 !important;
+    color: white;
+}
+
+/* Sorting Priority Context Badge - Secondary gray */
+.modal-badge.bg-secondary {
+    background-color: #6c757d !important;
+    color: white;
+}
+
+.modal-badge.bg-secondary:hover {
+    background-color: #5c636a !important;
+}
+
+/* Wildcard Modal Badge - Warning yellow for JSON generation rules */
+.modal-badge.bg-warning {
+    background-color: #ffc107 !important;
+    color: #212529;
+}
+
+.modal-badge.bg-warning:hover {
+    background-color: #ffcd39 !important;
+}
+
+/* Source Data Concerns Modal Badge - Purple theme for data quality issues */
+.modal-badge.bg-sourceDataConcern {
+    background-color: #6f42c1 !important; /* Bootstrap purple (bs-purple) */
+    color: white;
+}
+
+.modal-badge.bg-sourceDataConcern:hover {
+    background-color: #5d3499 !important; /* Darker purple on hover - matches regular badge */
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(111, 66, 193, 0.3);
+}
+
+/* ========================================
+ * SOURCE DATA CONCERNS MODAL STYLING
+ * ======================================== */
+
+/* Source concern item containers */
+.source-concern-item {
+    background-color: #fdf2f8;
+    transition: all 0.2s ease;
+    margin-bottom: 0.5rem !important;
+}
+
+.source-concern-item:hover {
+    background-color: #fce7f3;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(156, 39, 176, 0.15);
+}
+
+/* Compact layout class for space efficiency */
+.concern-content.compact-layout .problem-description,
+.concern-content.compact-layout .problematic-data,
+.concern-content.compact-layout .resolution-guidance {
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.25rem;
+    border-radius: 0.2rem;
+}
+
+.concern-content.compact-layout .problem-description {
+    border-left: 3px solid #dc3545;
+    background-color: #f8d7da;
+}
+
+.concern-content.compact-layout .problematic-data {
+    border-left: 3px solid #ffc107;
+    background-color: #fff3cd;
+}
+
+.concern-content.compact-layout .resolution-guidance {
+    border-left: 3px solid #198754;
+    background-color: #d1e7dd;
+}
+
+/* LINT-style problem indicators */
+.concern-header h6 {
+    color: #dc3545 !important;
+    font-weight: 700;
+}
+
+/* Legacy styling for non-compact layouts */
+.concern-content:not(.compact-layout) .problem-description {
+    border-left: 3px solid #dc3545;
+    padding-left: 0.75rem;
+    background-color: #f8d7da;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+}
+
+.concern-content:not(.compact-layout) .problematic-data {
+    border-left: 3px solid #ffc107;
+    padding-left: 0.75rem;
+    background-color: #fff3cd;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+}
+
+.concern-content:not(.compact-layout) .resolution-guidance {
+    border-left: 3px solid #198754;
+    padding-left: 0.75rem;
+    background-color: #d1e7dd;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+}
+
+/* Data display tables within concerns */
+.data-display .row {
+    margin-bottom: 0.25rem;
+}
+
+.data-display .col-3 {
+    font-weight: 600;
+    color: #6c757d;
+}
+
+/* Purple theme badges */
+.badge.bg-purple {
+    background-color: #9C27B0 !important;
+    color: white;
+}
+
+/* ========================================
+ * WILDCARD MODAL STYLING
+ * ======================================== */
+
+/* Wildcard item containers */
+.wildcard-item {
+    background-color: #fff8e1;
+    border: 1px solid #ffc107 !important;
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+    margin-bottom: 0.5rem !important;
+    padding: 0.75rem !important;
+}
+
+.wildcard-item:hover {
+    background-color: #fff3cd;
+    border-color: #ffc107 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(255, 193, 7, 0.3);
+}
+
+/* JSON input/output display styling */
+.json-input {
+    background-color: #e8f4fd;
+    border: 1px solid #007bff;
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: #004085;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    overflow-x: auto;
+}
+
+.json-output {
+    background-color: #e8f5e8;
+    border: 1px solid #28a745;
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: #155724;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    overflow-x: auto;
+}
+
+/* Transformation arrow styling */
+.transformation-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffc107;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0.25rem 0;
+}
+
+.arrow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.transformation-icon {
+    font-size: 1.8rem;
+    color: #ffc107;
+    background: rgba(255, 193, 7, 0.15);
+    padding: 0.4rem;
+    border-radius: 0.25rem;
+    border: 2px solid rgba(255, 193, 7, 0.4);
+    font-weight: bold;
+}
+
+.transformation-icon-medium {
+    font-size: 2.0rem;
+    color: #ffc107;
+    font-weight: bold;
+    padding: 0.2rem;
+}
+
+.arrow-label {
+    font-size: 0.6rem;
+    font-weight: bold;
+    color: #856404;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Section overview styling */
+.section-overview {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.overview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-title {
+    margin: 0;
+    color: #856404;
+    font-weight: bold;
+}
+
+.processing-summary {
+    font-size: 0.8rem;
+    color: #856404;
+}
+
+.rule-count {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 193, 7, 0.5);
+}
+
+.json-display {
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    margin: 0;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    line-height: 1.4;
+}
+
+.explanation-text {
+    background-color: #fff8e1;
+    border-left: 3px solid #ffc107;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: #856404;
+}
+
+/* ========================================
+ * REFERENCE MODAL STYLING
+ * ======================================== */
+
+.reference-item-compact {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef !important;
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+    margin-bottom: 0.25rem !important;
+    padding: 0.375rem 0.5rem !important;
+}
+
+.reference-item-compact:hover {
+    background-color: #e9ecef;
+    border-color: #0d6efd !important;
+    transform: translateY(-1px);
+}
+
+.reference-link-compact {
+    color: #0d6efd;
+    text-decoration: none;
+    word-break: break-all;
+    font-size: 0.75rem;
+    line-height: 1.2;
+}
+
+.reference-link-compact:hover {
+    color: #0a58ca;
+    text-decoration: underline;
+}
+
+/* ========================================
+ * SORTING PRIORITY MODAL STYLING
+ * ======================================== */
+
+.sorting-item {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef !important;
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+    margin-bottom: 0.25rem !important;
+    padding: 0.375rem 0.5rem !important;
+}
+
+.sorting-item:hover {
+    background-color: #e9ecef;
+    border-color: #6c757d !important;
+    transform: translateY(-1px);
+}
+
+.search-key {
+    color: #495057;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.search-value {
+    color: #6c757d;
+    font-size: 0.7rem;
+    font-family: 'Courier New', monospace;
+}
+
+.version-key {
+    color: #495057;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.version-value {
+    color: #6c757d;
+    font-size: 0.7rem;
+}
+
+.priority-indicator {
+    background-color: #6c757d;
+    color: white;
+    font-size: 0.6rem;
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.25rem;
+    font-weight: bold;
+}
+
+/* ========================================
+ * JSON GENERATION RULES MODAL STYLING
+ * ======================================== */
+
+.json-rule-item-compact {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7 !important;
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+    margin-bottom: 0.5rem !important;
+    padding: 0.5rem !important;
+}
+
+/* ========================================
+ * MODAL CONTENT STYLING
+ * ======================================== */
+
+/* Confirmed Mapping Modal Styles */
+.confirmed-mapping-compact .sorting-item {
+    background: linear-gradient(135deg, rgba(25, 135, 84, 0.1) 0%, rgba(25, 135, 84, 0.05) 100%);
+    border-color: #198754 !important;
+}
+
+.confirmed-mapping-card {
+    background-color: rgba(25, 135, 84, 0.1);
+    border: 1px solid rgba(25, 135, 84, 0.3);
+}
+
+.confirmed-mapping-badge {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.cpe-base-string-display {
+    font-size: 0.9rem;
+}
+
+/* Search Results Modal Styles */
+.searches-compact .sorting-item {
+    font-size: 0.8rem;
+}
+
+.cpe-name-section {
+    flex: 1;
+}
+
+.search-value {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: #495057;
+    font-weight: 600;
+}
+
+.search-type-badge {
+    font-size: 0.7rem;
+    color: white;
+}
+
+/* Version Match Modal Styles */
+.versions-compact .sorting-item {
+    font-size: 0.8rem;
+}
+
+.cpe-name-section-version {
+    min-width: 300px;
+}
+
+.version-value {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: #495057;
+    font-weight: 600;
+}
+
+.version-type-badge {
+    font-size: 0.7rem;
+}
+
+.additional-fields {
+    border-color: #e9ecef !important;
+}
+
+.version-key {
+    font-size: 0.7rem;
+    color: #6c757d;
+}
+
+.version-field-value {
+    font-size: 0.7rem;
+    color: #495057;
+}
+
+/* Common Modal Badge Sizes */
+.badge-xs {
+    font-size: 0.65rem;
+}
+
+.badge-sm {
+    font-size: 0.7rem;
+}
+
+.badge-verified {
+    font-size: 0.65rem;
+}
+
+.badge-count {
+    font-size: 0.65rem;
+}
+
+/* CPE Code Display */
+.cpe-code {
+    font-size: 0.75rem;
+}
+
+/* ========================================
+ * SHARED MODAL ITEM STYLING
+ * ======================================== */
+
+/* Base modal item styling - shared across all modals */
+.modal-item-base {
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+    margin-bottom: 0.5rem !important;
+    padding: 0.75rem !important;
+    border-radius: 0.375rem;
+}
+
+.modal-item-base:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Warning themed items (Update Patterns, Wildcard, JSON Rules) */
+.modal-item-warning {
+    background-color: #fff3cd;
+    border: 1px solid #ffc107 !important;
+}
+
+.modal-item-warning:hover {
+    background-color: #ffeaa7;
+    border-color: #ffc107 !important;
+    box-shadow: 0 2px 4px rgba(255, 193, 7, 0.3);
+}
+
+/* Secondary themed items (References, Sorting Priority) */
+.modal-item-secondary {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef !important;
+}
+
+.modal-item-secondary:hover {
+    background-color: #e9ecef;
+    border-color: #6c757d !important;
+}
+
+/* Success themed items (Confirmed Mappings) */
+.modal-item-success {
+    background: linear-gradient(135deg, rgba(25, 135, 84, 0.1) 0%, rgba(25, 135, 84, 0.05) 100%);
+    border: 1px solid #198754 !important;
+}
+
+/* ========================================
+ * TRANSFORMATION STYLING
+ * ======================================== */
+
+/* Transformation header styling */
+.transformation-header {
+    margin-bottom: 0.5rem;
+}
+
+/* Transformation arrows */
+.transformation-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffc107;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0.25rem 0;
+}
+
+.transformation-icon-medium {
+    font-size: 1.2rem;
+    color: #ffc107;
+    font-weight: bold;
+    padding: 0.2rem;
+}
+
+/* JSON input/output display styling */
+.json-input {
+    background-color: #e8f4fd;
+    border: 1px solid #007bff;
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: #004085;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    overflow-x: auto;
+}
+
+.json-output {
+    background-color: #e8f5e8;
+    border: 1px solid #28a745;
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: #155724;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    overflow-x: auto;
+}
+
+/* ========================================
+ * WILDCARD MODAL STYLING
+ * ======================================== */
+
+.wildcard-item {
+    border-left: 3px solid #ffc107;
+    padding-left: 0.75rem;
+}
+
+.wildcard-item:hover {
+    background-color: rgba(255, 193, 7, 0.05);
+}
+
+/* ========================================
+ * REFERENCE MODAL STYLING
+ * ======================================== */
+
+.reference-item-compact {
+    padding: 0.375rem 0.5rem !important;
+    margin-bottom: 0.25rem !important;
+}
+
+.reference-link-compact {
+    color: #0d6efd;
+    text-decoration: none;
+    word-break: break-all;
+    font-size: 0.75rem;
+    line-height: 1.2;
+}
+
+.reference-link-compact:hover {
+    color: #0a58ca;
+    text-decoration: underline;
+}
+
+/* ========================================
+ * SORTING PRIORITY MODAL STYLING
+ * ======================================== */
+
+.sorting-item {
+    padding: 0.375rem 0.5rem !important;
+    margin-bottom: 0.25rem !important;
+}
+
+.search-value, .version-value {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: #495057;
+    font-weight: 600;
+}
+
+.search-key, .version-key {
+    color: #495057;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+/* ========================================
+ * UPDATE PATTERNS MODAL STYLING
+ * ======================================== */
+
+.update-pattern-item {
+    border-left: 3px solid #ffc107;
+    padding-left: 0.75rem;
+}
+
+.update-pattern-item:hover {
+    background-color: rgba(255, 193, 7, 0.05);
+}
+
+/* Update Patterns output styling */
+.update-pattern-output {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+    color: #198754;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.update-pattern-output:hover {
+    background-color: #e9ecef;
+    border-color: #198754;
+}
+
+.update-patterns-compact .alert-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    color: #856404;
+}
+
+/* ========================================
+ * CONFIRMED MAPPING MODAL STYLING
+ * ======================================== */
+
+.confirmed-mapping-card {
+    background-color: rgba(25, 135, 84, 0.1);
+    border: 1px solid rgba(25, 135, 84, 0.3);
+}
+
+.confirmed-mapping-badge {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.cpe-base-string-display {
+    font-size: 0.9rem;
+}
+
+.cpe-code {
+    font-size: 0.75rem;
+}
+
+/* ========================================
+ * VERSION MATCH MODAL STYLING
+ * ======================================== */
+
+.cpe-name-section-version {
+    min-width: 300px;
+}
+
+.additional-fields {
+    border-color: #e9ecef !important;
+}
+
+.version-field-value {
+    font-size: 0.7rem;
+    color: #495057;
+}
+
+/* ========================================
+ * BADGE STYLING
+ * ======================================== */
+
+.badge-xs {
+    font-size: 0.65rem;
+}
+
+.badge-sm {
+    font-size: 0.7rem;
+}
+
+.badge-verified {
+    font-size: 0.65rem;
+}
+
+.badge-count {
+    font-size: 0.65rem;
+}
+
