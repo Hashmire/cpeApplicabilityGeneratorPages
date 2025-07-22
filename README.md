@@ -16,17 +16,18 @@ https://hashmire.github.io/cpeApplicabilityGeneratorPages/generated_pages/[CVE-I
 
 **Examples:**
 
-- `https://hashmire.github.io/cpeApplicabilityGeneratorPages/generated_pages/CVE-2024-47176.html`
-- `https://hashmire.github.io/cpeApplicabilityGeneratorPages/generated_pages/CVE-2023-12345.html`
-- `https://hashmire.github.io/cpeApplicabilityGeneratorPages/generated_pages/CVE-2022-98765.html`
+- [`CVE-2024-47176`](https://hashmire.github.io/cpeApplicabilityGeneratorPages/generated_pages/CVE-2024-47176.html)
+- [`CVE-2024-3371`](https://hashmire.github.io/cpeApplicabilityGeneratorPages/generated_pages/CVE-2024-3371.html)
+- [`CVE-2024-21389`](https://hashmire.github.io/cpeApplicabilityGeneratorPages/generated_pages/CVE-2024-21389.html)
 
 ## 📁 Repository Structure
 
 ```text
 ├── generated_pages/          # HTML files for individual CVE analyses
 │   ├── CVE-2024-47176.html   # Interactive CVE analysis page
-│   ├── CVE-2023-12345.html   # Each file contains complete vulnerability data
-│   └── ...                   # And interactive CPE generation tools
+│   ├── CVE-2024-3371.html    # Each file contains complete vulnerability data
+│   ├── CVE-2024-21389.html   # And interactive CPE generation tools
+│   └── ...                   # (26 total CVE analysis pages)
 ├── static/                   # Static assets (CSS & JavaScript)
 │   ├── css/
 │   │   └── styles.css        # Main stylesheet
