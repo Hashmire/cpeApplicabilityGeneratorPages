@@ -16,18 +16,14 @@ https://hashmire.github.io/cpeApplicabilityGeneratorPages/generated_pages/[CVE-I
 
 **Examples:**
 
-- [`CVE-2024-47176`](https://hashmire.github.io/cpeApplicabilityGeneratorPages/generated_pages/CVE-2024-47176.html)
-- [`CVE-2024-3371`](https://hashmire.github.io/cpeApplicabilityGeneratorPages/generated_pages/CVE-2024-3371.html)
-- [`CVE-2024-21389`](https://hashmire.github.io/cpeApplicabilityGeneratorPages/generated_pages/CVE-2024-21389.html)
+- `https://hashmire.github.io/cpeApplicabilityGeneratorPages/generated_pages/CVE-YYYY-NNNNN.html`
 
 ## 📁 Repository Structure
 
 ```text
 ├── generated_pages/          # HTML files for individual CVE analyses
-│   ├── CVE-2024-47176.html   # Interactive CVE analysis page
-│   ├── CVE-2024-3371.html    # Each file contains complete vulnerability data
-│   ├── CVE-2024-21389.html   # And interactive CPE generation tools
-│   └── ...                   # (26 total CVE analysis pages)
+│   ├── CVE-YYYY-NNNNN.html   # Interactive CVE analysis pages
+│   └── ...                   # (Generated based on available CVE data)
 ├── static/                   # Static assets (CSS & JavaScript)
 │   ├── css/
 │   │   └── styles.css        # Main stylesheet
@@ -86,9 +82,9 @@ This repository hosts generated content. For issues or feature requests related 
 **Quick Start Example:**
 
 ```bash
-# Access CVE-2024-47176 analysis page
-curl -I https://hashmire.github.io/cpeApplicabilityGeneratorPages/generated_pages/CVE-2024-47176.html
+# Access a CVE analysis page (replace with actual CVE ID)
+curl -I https://hashmire.github.io/cpeApplicabilityGeneratorPages/generated_pages/CVE-YYYY-NNNNN.html
 
 # Or simply visit in your browser:
-# https://hashmire.github.io/cpeApplicabilityGeneratorPages/generated_pages/CVE-2024-47176.html
+# https://hashmire.github.io/cpeApplicabilityGeneratorPages/generated_pages/CVE-YYYY-NNNNN.html
 ```
